@@ -1,0 +1,956 @@
+patry@Patryk MINGW64 ~ (master)
+$ mkdir ćwiczenia_git
+
+patry@Patryk MINGW64 ~ (master)
+$ cd ćwiczenia_git
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git init
+Initialized empty Git repository in C:/Users/patry/─çwiczenia_git/.git/
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ echo "README-wersia 1. Master" > README.md
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git add README.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   README.md
+
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git commit -m "Dodanie pliku README"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'patry@Patryk.(none)')
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git config -- ^C
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git config --global user.name "Patryk"
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git config --global user.email "patrykpiszczek022@gmail.com"
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git commit -m "Dodanie pliku README"
+[master (root-commit) d1effd1] Dodanie pliku README
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ echo "README - wersja3: Master" > README.md
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git diff
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+diff --git a/README.md b/README.md
+index 4080fa4..3186026 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-README-wersia 1. Master
++README - wersja3: Master
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git add README.md
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git diff --staged
+diff --git a/README.md b/README.md
+index 4080fa4..3186026 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-README-wersia 1. Master
++README - wersja3: Master
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ echo "Podstawy używania Gira - praca w plikach" >> README.md
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git diff
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+diff --git a/README.md b/README.md
+index 3186026..f55a10a 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,2 @@
+ README - wersja3: Master
++Podstawy używania Gira - praca w plikach
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ echo "Podstawy używania Gita - praca na plikach" >> README.md
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git diff
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+diff --git a/README.md b/README.md
+index 3186026..13301e6 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,3 @@
+ README - wersja3: Master
++Podstawy używania Gira - praca w plikach
++Podstawy używania Gita - praca na plikach
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git diff --staged
+diff --git a/README.md b/README.md
+index 4080fa4..3186026 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1 @@
+-README-wersia 1. Master
++README - wersja3: Master
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git commit -m "Zmiany w pliku README"
+[master 85fa53b] Zmiany w pliku README
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ echo "coś" > ćwiczenie3.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ mkdir cwiczenie_3
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        "\304\207wiczenie3.txt"
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git add cwiczenie3.txt
+fatal: pathspec 'cwiczenie3.txt' did not match any files
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ mkdir cwiczenie_3
+mkdir: cannot create directory ‘cwiczenie_3’: File exists
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        "\304\207wiczenie3.txt"
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ echo "cos" cwiczenie3.txt
+cos cwiczenie3.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git add cwiczenie3.txt
+fatal: pathspec 'cwiczenie3.txt' did not match any files
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        "\304\207wiczenie3.txt"
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ echo "cos" > cwiczenie3.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git add cwiczenie3.txt
+warning: in the working copy of 'cwiczenie3.txt', LF will be replaced by CRLF the next time Git touches it
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   cwiczenie3.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        "\304\207wiczenie3.txt"
+
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ mv cwiczenie_3/cwiczenie3.txt
+mv: missing destination file operand after 'cwiczenie_3/cwiczenie3.txt'
+Try 'mv --help' for more information.
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ mkdir cwiczenie_3
+mkdir: cannot create directory ‘cwiczenie_3’: File exists
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ mv cwiczenie_3/cwiczenie3.txt
+mv: missing destination file operand after 'cwiczenie_3/cwiczenie3.txt'
+Try 'mv --help' for more information.
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ mv cwiczenie2.txt cwiczenie_3/
+mv: cannot stat 'cwiczenie2.txt': No such file or directory
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git add cwiczenie_3/cwiczenie2.txt
+fatal: pathspec 'cwiczenie_3/cwiczenie2.txt' did not match any files
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git rm cwiczenie2.txt
+fatal: pathspec 'cwiczenie2.txt' did not match any files
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ mv cwiczenie_3/cwiczenie3.txt
+mv: missing destination file operand after 'cwiczenie_3/cwiczenie3.txt'
+Try 'mv --help' for more information.
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ mv --help
+Usage: mv [OPTION]... [-T] SOURCE DEST
+  or:  mv [OPTION]... SOURCE... DIRECTORY
+  or:  mv [OPTION]... -t DIRECTORY SOURCE...
+Rename SOURCE to DEST, or move SOURCE(s) to DIRECTORY.
+
+Mandatory arguments to long options are mandatory for short options too.
+      --backup[=CONTROL]       make a backup of each existing destination file
+  -b                           like --backup but does not accept an argument
+  -f, --force                  do not prompt before overwriting
+  -i, --interactive            prompt before overwrite
+  -n, --no-clobber             do not overwrite an existing file
+If you specify more than one of -i, -f, -n, only the final one takes effect.
+      --strip-trailing-slashes  remove any trailing slashes from each SOURCE
+                                 argument
+  -S, --suffix=SUFFIX          override the usual backup suffix
+  -t, --target-directory=DIRECTORY  move all SOURCE arguments into DIRECTORY
+  -T, --no-target-directory    treat DEST as a normal file
+  -u, --update                 move only when the SOURCE file is newer
+                                 than the destination file or when the
+                                 destination file is missing
+  -v, --verbose                explain what is being done
+  -Z, --context                set SELinux security context of destination
+                                 file to default type
+      --help     display this help and exit
+      --version  output version information and exit
+
+The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.
+The version control method may be selected via the --backup option or through
+the VERSION_CONTROL environment variable.  Here are the values:
+
+  none, off       never make backups (even if --backup is given)
+  numbered, t     make numbered backups
+  existing, nil   numbered if numbered backups exist, simple otherwise
+  simple, never   always make simple backups
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Report any translation bugs to <https://translationproject.org/team/>
+Full documentation <https://www.gnu.org/software/coreutils/mv>
+or available locally via: info '(coreutils) mv invocation'
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ mv cwiczenie3.txt cwiczenie_3/
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ mv cwiczenie_3/cwiczenie3.txt
+mv: missing destination file operand after 'cwiczenie_3/cwiczenie3.txt'
+Try 'mv --help' for more information.
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ ^C
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ mv cwiczenie_3/cwiczenie3.txt .
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   cwiczenie3.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        "\304\207wiczenie3.txt"
+
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git commit -m "dodanie pliku cwiczenie3.txt"
+[master 4531241] dodanie pliku cwiczenie3.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 cwiczenie3.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ rm ćwiczenie3.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ rm cwiczenie3.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git commit -m "Usunięcie pliku cwiczenie3.txt"
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+        deleted:    cwiczenie3.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+        deleted:    cwiczenie3.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ touch cwiczenie4.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git add cwiczenie4.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git commit-m "Dodanie pliku cwiczenie3.txt"
+git: 'commit-m' is not a git command. See 'git --help'.
+
+The most similar command is
+        commit-tree
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git commit -m "Dodanie pliku cwiczenie4.txt"
+[master 26daf7a] Dodanie pliku cwiczenie4.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 cwiczenie4.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ echo "Git,rozproszony system kontroli wersji. Stworzył go Linus Torvalds jako narzędzie wspomagające rozwój jądra Linux. Git stanowi wilne oprogramowanie i został opublikowany na licenci GNU GPL w wersji 2."
+Git,rozproszony system kontroli wersji. Stworzył go Linus Torvalds jako narzędzie wspomagające rozwój jądra Linux. Git stanowi wilne oprogramowanie i został opublikowany na licenci GNU GPL w wersji 2.
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git commit --amend -m "Dodanie pliku cwiczenie4.txt z opisem Git"
+[master 26d645b] Dodanie pliku cwiczenie4.txt z opisem Git
+ Date: Sun Jun 16 08:51:30 2024 +0200
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 cwiczenie4.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ echo "Od początku lat 90. XX wieku CVS jest wykorzystywany jako narzędzue pracy grupowej w wielu projektach programistycznych, których współpraca opiera się na wykorzystaniue internetu - są to m.in. całe systemy operacyjne takie jak OpenBSD i NetBSD." >> cwiczenie4.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git add cwiczenie4.txt
+warning: in the working copy of 'cwiczenie4.txt', LF will be replaced by CRLF the next time Git touches it
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git reset HEAD cwiczenie4.txt
+Unstaged changes after reset:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[master 0820310] Revert "Usuni─Öcie pliku cwiczenie4.txt"
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 cwiczenie4.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git log
+commit 0820310c9daef7a3e6b621536ff1494830209bd1 (HEAD -> master)
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 08:59:29 2024 +0200
+
+    Revert "Usunięcie pliku cwiczenie4.txt"
+
+    This reverts commit 09ad7c24c79607b0b760fa4aba6f61dc338cf075. ^Z
+    fg
+
+commit 09ad7c24c79607b0b760fa4aba6f61dc338cf075
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 08:59:15 2024 +0200
+
+    Usunięcie pliku cwiczenie4.txt
+
+commit 26d645be65a6d68fd07f96eeb5e5f4d02f24f2d0
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 08:51:30 2024 +0200
+
+    Dodanie pliku cwiczenie4.txt z opisem Git
+
+commit 4531241cd46968ad73c71b8b3b74086500e1ba7b
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 08:46:43 2024 +0200
+
+    dodanie pliku cwiczenie3.txt
+
+commit 85fa53bf3a7d1af37a0930b38e5cd07f9be45081
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 08:31:15 2024 +0200
+
+    Zmiany w pliku README
+
+commit d1effd1816eef802a4a00b6709e538ccc7e5b323
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 08:22:05 2024 +0200
+
+    Dodanie pliku README
+(END)
+commit 0820310c9daef7a3e6b621536ff1494830209bd1 (HEAD -> master)
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 08:59:29 2024 +0200
+
+    Revert "Usunięcie pliku cwiczenie4.txt"
+
+    This reverts commit 09ad7c24c79607b0b760fa4aba6f61dc338cf075. ^Z
+    fg
+
+commit 09ad7c24c79607b0b760fa4aba6f61dc338cf075
+commit 0820310c9daef7a3e6b621536ff1494830209bd1 (HEAD -> master)
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 08:59:29 2024 +0200
+
+    Revert "Usunięcie pliku cwiczenie4.txt"
+
+    This reverts commit 09ad7c24c79607b0b760fa4aba6f61dc338cf075. ^Z
+    fg
+
+commit 09ad7c24c79607b0b760fa4aba6f61dc338cf075
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 08:59:15 2024 +0200
+
+    Usunięcie pliku cwiczenie4.txt
+
+commit 26d645be65a6d68fd07f96eeb5e5f4d02f24f2d0
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 08:51:30 2024 +0200
+
+    Dodanie pliku cwiczenie4.txt z opisem Git
+
+commit 4531241cd46968ad73c71b8b3b74086500e1ba7b
+Author: Patryk <patrykpiszczek022@gmail.com>
+d
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git reset --hard HEAD~1
+fatal: ambiguous argument 'HEAEAD┬Ť~1': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ ^C
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git reset --hard HEAEAD~1
+fatal: ambiguous argument 'HEAEAD┬Ť~1': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$git reset --hard HEAEAD~1
+fatal: ambiguous argument 'HEAEAD┬Ť~1': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git reset HAEAD~1
+error: unknown option `hH'
+usage: git reset [--mixed | --soft | --hard | --merge | --keep] [-q] [<commit>]
+   or: git reset [-q] [<tree-ish>] [--] <pathspec>...
+   or: git reset [-q] [--pathspec-from-file [--pathspec-file-nul]] [<tree-ish>]
+   or: git reset --patch [<tree-ish>] [--] [<pathspec>...]
+   or: DEPRECATED: git reset [-q] [--stdin [-z]] [<tree-ish>]
+
+    -q, --[no-]quiet      be quiet, only report errors
+    --no-refresh          skip refreshing the index after reset
+    --refresh             opposite of --no-refresh
+    --mixed               reset HEAD and index
+    --soft                reset only HEAD
+    --hard                reset HEAD, index and working tree
+    --merge               reset HEAD, index and working tree
+    --keep                reset HEAD but keep local changes
+    --[no-]recurse-submodules[=<reset>]
+                          control recursive updating of submodules
+    -p, --[no-]patch      select hunks interactively
+    -N, --[no-]intent-to-add
+                          record only the fact that removed paths will be added later
+    --[no-]pathspec-from-file <file>
+                          read pathspec from file
+    --[no-]pathspec-file-nul
+                          with --pathspec-from-file, pathspec elements are separated with NUL character
+    -z                    DEPRECATED (use --pathspec-file-nul instead): paths are separated with NUL character
+    --[no-]stdin          DEPRECATED (use --pathspec-from-file=- instead): read paths from <stdin>
+
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git remote add origin [https://github.com/PatrykPiszczek/cwiczenia2.git
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ git remote add origin [https://github.com/PatrykPiszczek/cwiczenia2.git]
+error: remote origin already exists.
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ mkdir cwiczenia_git_5
+
+patry@Patryk MINGW64 ~/ćwiczenia_git (master)
+$ cd cwiczenia_git_5
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ git init
+Initialized empty Git repository in C:/Users/patry/─çwiczenia_git/cwiczenia_git_5/.git/
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ git remote add origin [https://github.com/PatrykPiszczek/cwiczenia2.git]
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ git pull origin master
+fatal: protocol '[https' is not supported
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ git remote add origin https://github.com/PatrykPiszczek/cwiczenia2.git
+error: remote origin already exists.
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ git pull origin master
+fatal: protocol '[https' is not supported
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ touch cwiczenie4.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ git add cwiczenie4.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ git commit -m "Dodaj cwiczenie4.txt"
+[master (root-commit) f2fe55d] Dodaj cwiczenie4.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 cwiczenie4.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ git push origin master
+fatal: protocol '[https' is not supported
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ git pull origin master
+fatal: protocol '[https' is not supported
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ echo "Nowa zawartość" > cwiczenie4.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ git commit -am "Zmiana cwiczenie4.txt"
+warning: in the working copy of 'cwiczenie4.txt', LF will be replaced by CRLF the next time Git touches it
+[master ff92bf9] Zmiana cwiczenie4.txt
+ 1 file changed, 1 insertion(+)
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ git push origin master
+fatal: protocol '[https' is not supported
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ touch cwiczenie4_2.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ git add cwiczenie4_2.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ git commit -m "Dodaj cwiczenie4_2.txt"
+[master b07a562] Dodaj cwiczenie4_2.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 cwiczenie4_2.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ git push origin master
+fatal: protocol '[https' is not supported
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ git pull origin master
+fatal: protocol '[https' is not supported
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ git push origin master
+fatal: protocol '[https' is not supported
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ git branch cwiczenie6_1
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ git checkout cwiczenie6_1
+Switched to branch 'cwiczenie6_1'
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (cwiczenie6_1)
+$ echo "Jakiś tekst" > cwiczenie5_1.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (cwiczenie6_1)
+$ git add cwiczenie5_1.txt
+warning: in the working copy of 'cwiczenie5_1.txt', LF will be replaced by CRLF the next time Git touches it
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Merge made by the 'ort' strategy.
+ cwiczenie5_1.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 cwiczenie5_1.txt
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$
+
+patry@Patryk MINGW64 ~/ćwiczenia_git/cwiczenia_git_5 (master)
+$ git log
+commit 7b3f4b7fef2d1985b19cb91268bf47216bdf4ffc (HEAD -> master)
+Merge: 938c1ba 560b4df
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 09:44:40 2024 +0200
+
+    Merge branch 'cwiczenie6_1'
+
+commit 938c1ba7d09964def1d64431e7b78356fee9413c
+Author: Patryk <patrykpiszczek022@gmail.com>
+commit 7b3f4b7fef2d1985b19cb91268bf47216bdf4ffc (HEAD -> master)
+Merge: 938c1ba 560b4df
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 09:44:40 2024 +0200
+
+    Merge branch 'cwiczenie6_1'
+
+commit 938c1ba7d09964def1d64431e7b78356fee9413c
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 09:44:33 2024 +0200
+
+    Dodaj cwiczenie6_2.txt
+
+commit 560b4dfe5af7539523ac554623de1a9a9c2a63cd (cwiczenie6_1)
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 09:43:54 2024 +0200
+
+    Dodaj cwiczenie5_1.txt
+
+commit b07a5627931fe8b478ac7f0a798898648a7c2eb3
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 09:39:44 2024 +0200
+
+    Dodaj cwiczenie4_2.txt
+
+commit ff92bf9f26973f6c73fbb724c9e43a7e2b5767b3
+Author: Patryk <patrykpiszczek022@gmail.com>
+...skipping...
+
+                   SUMMARY OF LESS COMMANDS
+
+      Commands marked with * may be preceded by a number, N.
+      Notes in parentheses indicate the behavior if N is given.
+      A key preceded by a caret indicates the Ctrl key; thus ^K is ctrl-K.
+
+  h  H                 Display this help.
+  q  :q  Q  :Q  ZZ     Exit.
+ ---------------------------------------------------------------------------
+
+                           MOVING
+
+  e  ^E  j  ^N  CR  *  Forward  one line   (or N lines).
+  y  ^Y  k  ^K  ^P  *  Backward one line   (or N lines).
+  f  ^F  ^V  SPACE  *  Forward  one window (or N lines).
+  b  ^B  ESC-v      *  Backward one window (or N lines).
+  z                 *  Forward  one window (and set window to N).
+  w                 *  Backward one window (and set window to N).
+  ESC-SPACE         *  Forward  one window, but don't stop at end-of-file.
+  d  ^D             *  Forward  one half-window (and set half-window to N).
+  u  ^U             *  Backward one half-window (and set half-window to N).
+  ESC-)  RightArrow *  Right one half screen width (or N positions).
+  ESC-(  LeftArrow  *  Left  one half screen width (or N positions).
+  ESC-}  ^RightArrow   Right to last column displayed.
+  ESC-{  ^LeftArrow    Left  to first column.
+  F                    Forward forever; like "tail -f".
+HELP -- Press RETURN for more, or q when done...skipping...
+commit 7b3f4b7fef2d1985b19cb91268bf47216bdf4ffc (HEAD -> master)
+Merge: 938c1ba 560b4df
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 09:44:40 2024 +0200
+
+    Merge branch 'cwiczenie6_1'
+
+commit 938c1ba7d09964def1d64431e7b78356fee9413c
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 09:44:33 2024 +0200
+
+    Dodaj cwiczenie6_2.txt
+
+commit 560b4dfe5af7539523ac554623de1a9a9c2a63cd (cwiczenie6_1)
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 09:43:54 2024 +0200
+
+    Dodaj cwiczenie5_1.txt
+
+commit b07a5627931fe8b478ac7f0a798898648a7c2eb3
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 09:39:44 2024 +0200
+
+    Dodaj cwiczenie4_2.txt
+
+commit ff92bf9f26973f6c73fbb724c9e43a7e2b5767b3
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 09:38:55 2024 +0200
+
+    Zmiana cwiczenie4.txt
+
+commit f2fe55d382c1988a9549da5944892871f24c0d4d
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 09:38:02 2024 +0200
+
+    Dodaj cwiczenie4.txt
+(END)
+Date:   Sun Jun 16 09:44:33 2024 +0200
+
+    Dodaj cwiczenie6_2.txt
+
+commit 560b4dfe5af7539523ac554623de1a9a9c2a63cd (cwiczenie6_1)
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 09:43:54 2024 +0200
+
+    Dodaj cwiczenie5_1.txt
+
+commit b07a5627931fe8b478ac7f0a798898648a7c2eb3
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 09:39:44 2024 +0200
+
+    Dodaj cwiczenie4_2.txt
+
+commit ff92bf9f26973f6c73fbb724c9e43a7e2b5767b3
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 09:38:55 2024 +0200
+
+    Zmiana cwiczenie4.txt
+
+commit f2fe55d382c1988a9549da5944892871f24c0d4d
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 09:38:02 2024 +0200
+
+:
+Date:   Sun Jun 16 09:44:33 2024 +0200
+
+    Dodaj cwiczenie6_2.txt
+
+commit 560b4dfe5af7539523ac554623de1a9a9c2a63cd (cwiczenie6_1)
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 09:43:54 2024 +0200
+
+    Dodaj cwiczenie5_1.txt
+
+commit b07a5627931fe8b478ac7f0a798898648a7c2eb3
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 09:39:44 2024 +0200
+
+    Dodaj cwiczenie4_2.txt
+
+commit ff92bf9f26973f6c73fbb724c9e43a7e2b5767b3
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 09:38:55 2024 +0200
+
+    Zmiana cwiczenie4.txt
+
+commit f2fe55d382c1988a9549da5944892871f24c0d4d
+Author: Patryk <patrykpiszczek022@gmail.com>
+Date:   Sun Jun 16 09:38:02 2024 +0200
+
+    Dodaj cwiczenie4.txt
+(END)
+
+patry@Patryk MINGW64 ~ (master)
+$ git branch cwiczenie8
+fatal: not a valid object name: 'master'
+
+patry@Patryk MINGW64 ~ (master)
+$ ^C
+
+patry@Patryk MINGW64 ~ (master)
+$ git commit --allow-empty -m "Initial commit"
+[master (root-commit) 8708d06] Initial commit
+
+patry@Patryk MINGW64 ~ (master)
+$ git branch master
+fatal: a branch named 'master' already exists
+
+patry@Patryk MINGW64 ~ (master)
+$ git branch cwiczenie8
+
+patry@Patryk MINGW64 ~ (master)
+$ git checkout cwiczenie8
+Switched to branch 'cwiczenie8'
+
+patry@Patryk MINGW64 ~ (cwiczenie8)
+$ echo "README – wersja 3: zmieńcie i dopisz w ostatniej linii: „Dodane na gałęzi cwiczenie8”" > README.md
+
+patry@Patryk MINGW64 ~ (cwiczenie8)
+$ git checkout master
+Switched to branch 'master'
+
+patry@Patryk MINGW64 ~ (master)
+$ echo "README – wersja 3: Master. Linia dodana na gałęzi master" >> README.md
+
+patry@Patryk MINGW64 ~ (master)
+$ git merge cwiczenie8
+Already up to date.
+
+patry@Patryk MINGW64 ~ (master)
+$ git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+opendiff kdiff3 tkdiff xxdiff meld tortoisemerge gvimdiff diffuse diffmerge ecmerge p4merge araxis bc codecompare smerge emerge vimdiff nvimdiff
+No files need merging
+
+patry@Patryk MINGW64 ~ (master)
+$
